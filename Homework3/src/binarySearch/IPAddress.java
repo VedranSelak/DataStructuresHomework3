@@ -1,6 +1,6 @@
-package homework3;
+package binarySearch;
 
-public class IPAddress implements Comparable<IPAddress>{
+public class IPAddress implements Comparable<Long>{
 	long ipFrom;
 	long ipTo;
 	String countryCode;
@@ -18,16 +18,17 @@ public class IPAddress implements Comparable<IPAddress>{
 	}
 	
 	@Override
-	public int compareTo(IPAddress address) {
-		if(this.ipFrom > address.ipFrom) {
-			return 1;
-		} else {
+	public int compareTo(Long address) {
+		if(this.ipFrom <= address && this.ipTo >= address) {
 			return 0;
+		} else if (this.ipFrom > address ) {
+			return -1;
+		} else {
+			return 1;
 		}
 	}
 
 	public String toString() {
 		return "\"" + this.ipFrom + "\"" + "," + "\"" + this.ipTo + "\"" + "," + "\"" + this.countryCode + "\"" + "," + "\"" + this.countryName + "\"" + "," + "\"" + this.regionName + "\"" + "," + "\"" + this.cityName + "\"" ;
 	}
-
 }

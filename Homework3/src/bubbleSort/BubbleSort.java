@@ -1,4 +1,4 @@
-package homework3;
+package bubbleSort;
 
 public class BubbleSort {
 	public static void sort(IPAddress[] list) {
