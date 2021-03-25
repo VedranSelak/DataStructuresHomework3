@@ -1,6 +1,6 @@
 # DataStructuresHomework3
 
-##Bubble Sorting and Binary Search implemented on complex data
+## Bubble Sorting and Binary Search implemented on complex data
 1. Reading from a .csv file
 2. Sorting the file
 3. Writing to a new .csv file
