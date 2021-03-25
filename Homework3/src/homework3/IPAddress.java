@@ -27,7 +27,7 @@ public class IPAddress implements Comparable<IPAddress>{
 	}
 
 	public String toString() {
-		return this.ipFrom + "," + this.ipTo + "," + this.countryCode + "," + this.countryName + "," + this.regionName + "," + this.cityName;
+		return "\"" + this.ipFrom + "\"" + "," + "\"" + this.ipTo + "\"" + "," + "\"" + this.countryCode + "\"" + "," + "\"" + this.countryName + "\"" + "," + "\"" + this.regionName + "\"" + "," + "\"" + this.cityName + "\"" ;
 	}
 
 }
