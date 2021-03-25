@@ -10,7 +10,7 @@ public class Main {
 	
 	public static long convert(String address) {
 		String[] list = address.split("\\.");
-		long finalAddress = 16777216*Long.parseLong(list[0]) + 65536*Long.parseLong(list[1]) + 256*Long.parseLong(list[2]) + Long.parseLong(list[2]);
+		long finalAddress = 16777216*Long.parseLong(list[0]) + 65536*Long.parseLong(list[1]) + 256*Long.parseLong(list[2]) + Long.parseLong(list[3]);
 		return finalAddress;
 	}
 	
@@ -41,17 +41,20 @@ public class Main {
 		}
 		br.close();
 		
-		//works for some
 		Scanner reader = new Scanner(System.in);
 		System.out.println("Enter an IP address: ");
 		String ipAddress = reader.nextLine();
-		
+		//convert IP to IP number
 		long num = convert(ipAddress); 
+		//search for the IP using binary search
 		int res = BinarySearch.search(ipAddresses, num);
 		if(res == -1) {
-			System.out.println("Not found");
+			System.out.println("Data has not been found!");
 		} else {
-			System.out.println(ipAddresses[res].countryCode + ", " + ipAddresses[res].countryName + ", " + ipAddresses[res].regionName + ", " + ipAddresses[res].cityName);
+			System.out.println("Contry Code: " + ipAddresses[res].countryCode + ", " +
+							   "Country Name: " + ipAddresses[res].countryName + ", " + 
+							   "Region Name: " + ipAddresses[res].regionName + ", " + 
+							   "City Name: " + ipAddresses[res].cityName);
 		}
 	}
 
